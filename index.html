@@ -27,41 +27,37 @@
                 </div>
             </div>
         </div>
-        <hr class="center" style="margin-bottom: 0px; width: 80%;">
-        
-        <!-- Já só falta o JS -->
-        
-        
-                <ul class="tabs" data-tab>
-                  <li id="home-tab" class="tab-title active"><a onclick="home();" href="#home">Home</a></li>
-                  <li id="quem-somos-tab" class="tab-title"><a onclick="quem_somos();" href="#quem-somos">Quem Somos</a></li>
-                  <li id="solucoes-tab" class="tab-title"><a onclick="solucoes();" href="#solucoes">Soluções</a></li>
-                  <li id="parceiros-tab" class="tab-title"><a onclick="parceiros();" href="#parceiros">Parceiros</a></li>
-                  <li id="marcas-comerciais-tab" class="tab-title"><a onclick="marcas_comerciais();" href="#marcas-comerciais">Marcas Comerciais</a></li>
-                  <li id="contactos-tab" class="tab-title"><a onclick="contactos();" href="#contactos">Contactos</a></li>
-                </ul>
-        
-                <div class="tabs-content">
-                  <div class="content active" id="home">
+        <hr class="center" style="margin-bottom: 0px; width: 80%; min-width: 1024px;">
+        <div class="row center" style="padding: 0;">
+            <ul class="tabs" style="width: 100%; padding: 0;" data-tab>
+                <li id="home-tab" class="tab-title active button_tab"><a onclick="home();" href="#home">Home</a></li>
+                <li id="quem-somos-tab" class="tab-title button_tab-big"><a onclick="quem_somos();" href="#quem-somos">Quem Somos</a></li>
+                <li id="solucoes-tab" class="tab-title button_tab"><a onclick="solucoes();" href="#solucoes">Soluções</a></li>
+                <li id="parceiros-tab" class="tab-title button_tab"><a onclick="parceiros();" href="#parceiros">Parceiros</a></li>
+                <li id="marcas-comerciais-tab" class="tab-title button_tab-big"><a onclick="marcas_comerciais();" href="#marcas-comerciais">Marcas Comerciais</a></li>
+                <li id="contactos-tab" class="tab-title button_tab"><a onclick="contactos();" href="#contactos">Contactos</a></li>
+            </ul>
+            <div class="tabs-content">
+                <div class="content active" id="home">
                     <p>Conteudo do Home</p>
-                  </div>
-                  <div class="content" id="quem-somos">
-                    <p>Conteudo do Quem somos</p>
-                  </div>
-                  <div class="content" id="solucoes">
-                    <p>Conteudo do Soluções</p>
-                  </div>
-                  <div class="content" id="parceiros">
-                    <p>Conteudo do Parceiros</p>
-                  </div>
-                  <div class="content" id="marcas-comerciais">
-                    <p>Conteudo do Marcas Comerciais</p>
-                  </div>
-                  <div class="content" id="contactos">
-                    <p>Conteudo do contactos</p>
-                  </div>
                 </div>
-
+                <div class="content" id="quem-somos">
+                    <p>Conteudo do Quem somos</p>
+                </div>
+                <div class="content" id="solucoes">
+                    <p>Conteudo do Soluções</p>
+                </div>
+                <div class="content" id="parceiros">
+                    <p>Conteudo do Parceiros</p>
+                </div>
+                <div class="content" id="marcas-comerciais">
+                    <p>Conteudo do Marcas Comerciais</p>
+                </div>
+                <div class="content" id="contactos">
+                    <p>Conteudo do contactos</p>
+                </div>
+            </div>
+        </div>
             
         
         <!-- Tive de importar alguns ficheiros que faltavam (i.e. foundation.tab.js, etc.) -->

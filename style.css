@@ -14,11 +14,19 @@
 }
 
 body {
-    min-width: 850px;
+    min-width: 1024px;
     width: 100%;
 }
 
 .center {
     margin-left: auto;
     margin-right: auto;
+}
+
+.button_tab {
+    width: 14.6666666667%;
+}
+
+.button_tab-big {
+    width: 20.6666666667%;
 }
