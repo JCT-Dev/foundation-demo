@@ -6,6 +6,8 @@
     height: 110px; 
     padding: 10px;
     min-width: 250px;
+    border-color: #ff8000;
+    color: #c96500;
 }
 
 .contacts {
@@ -17,6 +19,7 @@
 body {
     min-width: 1024px;
     width: 100%;
+    background: linear-gradient(#252525,#7c7c7c);
 }
 
 .center {
