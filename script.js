@@ -1,3 +1,14 @@
+//------------CONFIGURAÇÕES------------
+
+//Número Total de Imagens na pasta /img/slider
+
+//AVISO: As imagens deverão ser de formato .jpg
+// e devem ter o nome "img_x.jpg" (x = Número entre 1 e Número Total)
+
+var Numero_Total_de_Imagens = 2;
+
+//-------------------------------------
+
 function home(){
     document.getElementById("home-tab").setAttribute("class","tab-title button_tab active");
     document.getElementById("quem-somos-tab").setAttribute("class","tab-title button_tab-big");
@@ -92,4 +103,12 @@ function contactos(){
     document.getElementById("parceiros").setAttribute("class","content");
     document.getElementById("marcas-comerciais").setAttribute("class","content");
     document.getElementById("contactos").setAttribute("class","content active");
+}
+
+function reload_slider(){
+    for(var=1;i<=Numero_Total_de_Imagens;i++){
+        var divimg+="<div><img u='image' src='img/slider/img_"+i+".jpg'/></div>";
+    }
+    document.getElementById("slider_images").innerHTML=divimg;
+   }
 }
