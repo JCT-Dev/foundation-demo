@@ -28,7 +28,7 @@
             </div>
         </div>
         <br>
-        <!-- <hr class="center" style="margin-bottom: 0px; width: 80%; min-width: 1024px;"> -->
+        <!--<hr class="center" style="margin-bottom: 0px; width: 80%; min-width: 1024px;">-->
         <div class="row center" style="padding: 0;">
             <ul class="tabs" style="width: 100%; padding: 0;" data-tab>
                 <li id="home-tab" class="tab-title active button_tab"><a onclick="home();" href="#home">Home</a></li>
@@ -38,9 +38,159 @@
                 <li id="marcas-comerciais-tab" class="tab-title button_tab-big"><a onclick="marcas_comerciais();" href="#marcas-comerciais">Marcas Comerciais</a></li>
                 <li id="contactos-tab" class="tab-title button_tab"><a onclick="contactos();" href="#contactos">Contactos</a></li>
             </ul>
-            <div class="tabs-content">
+            <div class="tabs-content" style="width: 100%;">
                 <div class="content active" id="home">
-                    <p>Conteudo do Home</p>
+                    <script type="text/javascript" src="js/slider/jquery-1.9.1.min.js"></script>
+                    <script type="text/javascript" src="js/slider/jssor.js"></script>
+                    <script type="text/javascript" src="js/slider/jssor.slider.js"></script>
+                    <script>
+                        jQuery(document).ready(function ($) {
+
+                            var _CaptionTransitions = [];
+                            _CaptionTransitions["L"] = { $Duration: 900, x: 0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+                            _CaptionTransitions["R"] = { $Duration: 900, x: -0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+                            _CaptionTransitions["T"] = { $Duration: 900, y: 0.6, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+                            _CaptionTransitions["B"] = { $Duration: 900, y: -0.6, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+                            _CaptionTransitions["ZMF|10"] = { $Duration: 900, $Zoom: 11, $Easing: { $Zoom: $JssorEasing$.$EaseOutQuad, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 };
+                            _CaptionTransitions["RTT|10"] = { $Duration: 900, $Zoom: 11, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseOutQuad, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInExpo }, $Opacity: 2, $Round: { $Rotate: 0.8} };
+                            _CaptionTransitions["RTT|2"] = { $Duration: 900, $Zoom: 3, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInQuad }, $Opacity: 2, $Round: { $Rotate: 0.5} };
+                            _CaptionTransitions["RTTL|BR"] = { $Duration: 900, x: -0.6, y: -0.6, $Zoom: 11, $Rotate: 1, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $Opacity: 2, $Round: { $Rotate: 0.8} };
+                            _CaptionTransitions["CLIP|LR"] = { $Duration: 900, $Clip: 15, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic }, $Opacity: 2 };
+                            _CaptionTransitions["MCLIP|L"] = { $Duration: 900, $Clip: 1, $Move: true, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic} };
+                            _CaptionTransitions["MCLIP|R"] = { $Duration: 900, $Clip: 2, $Move: true, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic} };
+
+                            var options = {
+                                $FillMode: 2,
+                                $AutoPlay: true,
+                                $AutoPlayInterval: 6000,
+                                $PauseOnHover: 1,
+
+                                $ArrowKeyNavigation: true,
+                                $SlideEasing: $JssorEasing$.$EaseOutQuint,
+                                $SlideDuration: 800,
+                                $MinDragOffsetToSlide: 20,
+                                //$SlideWidth: 600,
+                                //$SlideHeight: 300,
+                                $SlideSpacing: 0,
+                                $DisplayPieces: 1,
+                                $ParkingPosition: 0,
+                                $UISearchMode: 1,
+                                $PlayOrientation: 1,
+                                $DragOrientation: 1,
+
+                                $CaptionSliderOptions: {
+                                    $Class: $JssorCaptionSlider$,
+                                    $CaptionTransitions: _CaptionTransitions,
+                                    $PlayInMode: 1,
+                                    $PlayOutMode: 3
+                                },
+
+                                $BulletNavigatorOptions: {
+                                    $Class: $JssorBulletNavigator$,
+                                    $ChanceToShow: 2,
+                                    $AutoCenter: 1,
+                                    $Steps: 1,
+                                    $Lanes: 1,
+                                    $SpacingX: 8,
+                                    $SpacingY: 8,
+                                    $Orientation: 1,
+                                    $Scale: false
+                                },
+
+                                $ArrowNavigatorOptions: {
+                                    $Class: $JssorArrowNavigator$,
+                                    $ChanceToShow: 1,
+                                    $AutoCenter: 2,
+                                    $Steps: 1
+                                }
+                            };
+                            
+                            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+                            
+                            function ScaleSlider() {
+                                var bodyWidth = document.body.clientWidth;
+                                if (bodyWidth)
+                                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1000));
+                                else
+                                    window.setTimeout(ScaleSlider, 30);
+                            }
+                            
+                            ScaleSlider();
+                            $(window).bind("load", ScaleSlider);
+                            $(window).bind("resize", ScaleSlider);
+                            $(window).bind("orientationchange", ScaleSlider);
+                        });
+                    </script>
+                    <div id="slider1_container" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 300px; overflow: hidden;">
+                        <!-- Slides Container -->
+                        <div u="slides" id="slider_images" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 300px; overflow: hidden;">
+                            <div><img u="image" src="img/slider/red.jpg"></div>
+                            <div><img u="image" src="img/slider/purple.jpg"></div>
+                            <div><img u="image" src="img/slider/blue.jpg"></div>
+                            <div><img u="image" src="img/slider/purple.jpg"></div>
+                        </div>
+
+                        <!-- Bullet Navigator Skin Begin -->
+                        <style>
+                            /* jssor slider bullet navigator skin 21 css */
+                            /*
+                            .jssorb21 div           (normal)
+                            .jssorb21 div:hover     (normal mouseover)
+                            .jssorb21 .av           (active)
+                            .jssorb21 .av:hover     (active mouseover)
+                            .jssorb21 .dn           (mousedown)
+                            */
+                            .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av
+                            {
+                                background: url(img/b21.png) no-repeat;
+                                overflow:hidden;
+                                cursor: pointer;
+                            }
+                            .jssorb21 div { background-position: -5px -5px; }
+                            .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+                            .jssorb21 .av { background-position: -65px -5px; }
+                            .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
+                        </style>
+                        <!-- bullet navigator container -->
+                        <div u="navigator" class="jssorb21" style="margin-left: auto; margin-right: auto; position: absolute; bottom: 26px; left: 6px;">
+                            <!-- bullet navigator item prototype -->
+                            <div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
+                        </div>
+                        <!-- Bullet Navigator Skin End -->
+
+                        <!-- Arrow Navigator Skin Begin -->
+                        <style>
+                            /* jssor slider arrow navigator skin 21 css */
+                            /*
+                            .jssora21l              (normal)
+                            .jssora21r              (normal)
+                            .jssora21l:hover        (normal mouseover)
+                            .jssora21r:hover        (normal mouseover)
+                            .jssora21ldn            (mousedown)
+                            .jssora21rdn            (mousedown)
+                            */
+                            .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn
+                            {
+                                position: absolute;
+                                cursor: pointer;
+                                display: block;
+                                background: url(img/a21.png) center center no-repeat;
+                                overflow: hidden;
+                            }
+                            .jssora21l { background-position: -3px -33px; }
+                            .jssora21r { background-position: -63px -33px; }
+                            .jssora21l:hover { background-position: -123px -33px; }
+                            .jssora21r:hover { background-position: -183px -33px; }
+                            .jssora21ldn { background-position: -243px -33px; }
+                            .jssora21rdn { background-position: -303px -33px; }
+                        </style>
+                        <!-- Arrow Left -->
+                        <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
+                        </span>
+                        <!-- Arrow Right -->
+                        <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
+                        </span>
+                    </div>
                 </div>
                 <div class="content" id="quem-somos">
                     <p>Conteudo do Quem somos</p>
