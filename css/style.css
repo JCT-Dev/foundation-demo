@@ -28,7 +28,7 @@ body {
 }
 
 .logo {
-    background-image: url("../img/logo/logo.png");
+    background-image: url("../img/logo/logo.svg"), url("../img/logo/logo.png");
     background-repeat: no-repeat;
     background-position: center;
     display: block;
@@ -127,4 +127,12 @@ body {
 
 .hidden {
     display: none;
+}
+
+.nag {
+    height: 32px;
+    width: 100%;
+    border-bottom: 3px solid #d2d6d5;
+    background-color: #e1e3e4;
+    color: #000;
 }
