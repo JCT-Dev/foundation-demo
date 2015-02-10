@@ -4,228 +4,155 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>Hipercálculo II - Tecnologias de Informação Unipessoal Lda.</title>
-        <link rel="stylesheet" href="css/foundation.css">
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="style.css">
-        <script src="js/vendor/custom.modernizr.js"></script>
-        <script src="script.js"></script>
+        <script src="js/config.js"></script>
     </head>
-    <body align="center" onload="reload_slider();">
-    <!-- INICIO DE BODY -->
-        <div class="row">
-            <div class="small-5 large-5 columns">
-                <a href="index.html"><img src="img/logo.png" style="height: 120px; width: auto; margin-top: 20px; margin-right: 15%;"/></a>
+    <body>
+        <div class="header">
+            <div class="header_div">
+                <a class="logo" href="http://hipercalculo.com/"></a>
             </div>
-            <div class="small-5 large-5 columns">
-                <div class="small-4 large-3 columns round-box">
+            <div class="header_div">
+                <div class="round-box">
                     <b>Contactos</b>
-                    <hr style="margin: 3px; margin-bottom: 8px; border-color:#c96500;">
-                    <p class="contacts"><i class="fa fa-phone"></i> - 249 711 707</p>
-                    <p class="contacts"><i class="fa fa-envelope-o"></i> - geral@hipercalculo.com</p>
+                    <hr class="hr_cont">
+                    <p class="contact"><i class="fa fa-phone"></i>&nbsp;&nbsp;&nbsp; 249 711 70</p>
+                    <p class="contact"><i class="fa fa-envelope-o"></i>&nbsp;&nbsp;&nbsp;geral@hipercalculo.com</p>
                 </div>
             </div>
         </div>
         <br>
-        <!--<hr class="center" style="margin-bottom: 0px; width: 80%; min-width: 1024px;">-->
-        <div class="row center" style="padding: 0;">
-            <ul class="tabs" style="width: 100%; padding: 0;" data-tab>
-                <li id="home-tab" class="tab-title active button_tab"><a onclick="home();" href="#home">Home</a></li>
-                <li id="quem-somos-tab" class="tab-title button_tab-big"><a onclick="quem_somos();" href="#quem-somos">Quem Somos</a></li>
-                <li id="solucoes-tab" class="tab-title button_tab"><a onclick="solucoes();" href="#solucoes">Soluções</a></li>
-                <li id="parceiros-tab" class="tab-title button_tab"><a onclick="parceiros();" href="#parceiros">Parceiros</a></li>
-                <li id="marcas-comerciais-tab" class="tab-title button_tab-big"><a onclick="marcas_comerciais();" href="#marcas-comerciais">Marcas Comerciais</a></li>
-                <li id="contactos-tab" class="tab-title button_tab"><a onclick="contactos();" href="#contactos">Contactos</a></li>
-            </ul>
-            <br>
-            <div class="tabs-content" style="width: 100%;">
-                <div class="content active" id="home">
-                    <script type="text/javascript" src="js/slider/jquery-1.9.1.min.js"></script>
-                    <script type="text/javascript" src="js/slider/jssor.js"></script>
-                    <script type="text/javascript" src="js/slider/jssor.slider.js"></script>
-                    <script>
-                        jQuery(document).ready(function ($) {
+        <div class="content">
+            <div class="menu">
+                <a class="menu_button active" href="#">Home</a>
+                <a class="menu_button big" href="quem_somos.html">Quem Somos</a>
+                <a class="menu_button" href="solucoes.html">Soluções</a>
+                <a class="menu_button" href="parceiros.html">Parceiros</a>
+                <a class="menu_button big" href="marcas_comerciais.html">Marcas Comerciais</a>
+                <a class="menu_button" href="contactos.html">Contactos</a>
+            </div>
+            <div class="page_content">
+                <script type="text/javascript" src="js/slider/jquery-1.9.1.min.js"></script>
+                <script type="text/javascript" src="js/slider/jssor.js"></script>
+                <script type="text/javascript" src="js/slider/jssor.slider.js"></script>
+                <script>
+                    jQuery(document).ready(function ($) {
 
-                            var _CaptionTransitions = [];
-                            _CaptionTransitions["L"] = { $Duration: 900, x: 0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
-                            _CaptionTransitions["R"] = { $Duration: 900, x: -0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
-                            _CaptionTransitions["T"] = { $Duration: 900, y: 0.6, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
-                            _CaptionTransitions["B"] = { $Duration: 900, y: -0.6, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
-                            _CaptionTransitions["ZMF|10"] = { $Duration: 900, $Zoom: 11, $Easing: { $Zoom: $JssorEasing$.$EaseOutQuad, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 };
-                            _CaptionTransitions["RTT|10"] = { $Duration: 900, $Zoom: 11, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseOutQuad, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInExpo }, $Opacity: 2, $Round: { $Rotate: 0.8} };
-                            _CaptionTransitions["RTT|2"] = { $Duration: 900, $Zoom: 3, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInQuad }, $Opacity: 2, $Round: { $Rotate: 0.5} };
-                            _CaptionTransitions["RTTL|BR"] = { $Duration: 900, x: -0.6, y: -0.6, $Zoom: 11, $Rotate: 1, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $Opacity: 2, $Round: { $Rotate: 0.8} };
-                            _CaptionTransitions["CLIP|LR"] = { $Duration: 900, $Clip: 15, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic }, $Opacity: 2 };
-                            _CaptionTransitions["MCLIP|L"] = { $Duration: 900, $Clip: 1, $Move: true, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic} };
-                            _CaptionTransitions["MCLIP|R"] = { $Duration: 900, $Clip: 2, $Move: true, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic} };
+                        var _CaptionTransitions = [];
 
-                            var options = {
-                                $FillMode: 2,
-                                $AutoPlay: true,
-                                $AutoPlayInterval: 6000,
-                                $PauseOnHover: 1,
+                        var options = {
+                            $FillMode: 2,                                     
+                            $AutoPlay: true,                                 
+                            $AutoPlayInterval: 6000,                         
+                            $PauseOnHover: 1,                                
+                            $ArrowKeyNavigation: true,   			         
+                            $SlideEasing: $JssorEasing$.$EaseOutQuint,       
+                            $SlideDuration: 800,                             
+                            $MinDragOffsetToSlide: 20,                            
+                            $SlideSpacing: 0, 					             
+                            $DisplayPieces: 1,                               
+                            $ParkingPosition: 0,                             
+                            $UISearchMode: 1,                                 
+                            $PlayOrientation: 1,                             
+                            $DragOrientation: 1,                             
+                            $CaptionSliderOptions: {                         
+                                $Class: $JssorCaptionSlider$,                 
+                                $CaptionTransitions: _CaptionTransitions,      
+                                $PlayInMode: 1,                               
+                                $PlayOutMode: 3                               
+                            },
+                            $BulletNavigatorOptions: {                       
+                                $Class: $JssorBulletNavigator$,               
+                                $ChanceToShow: 2,                             
+                                $AutoCenter: 1,                               
+                                $Steps: 1,                                   
+                                $Lanes: 1,                                   
+                                $SpacingX: 8,                                 
+                                $SpacingY: 8,                                 
+                                $Orientation: 1,                             
+                                $Scale: false
+                            },
+                            $ArrowNavigatorOptions: {                         
+                                $Class: $JssorArrowNavigator$,               
+                                $ChanceToShow: 1,                             
+                                $AutoCenter: 2,                               
+                                $Steps: 1                                     
+                            }
+                        };
 
-                                $ArrowKeyNavigation: true,
-                                $SlideEasing: $JssorEasing$.$EaseOutQuint,
-                                $SlideDuration: 800,
-                                $MinDragOffsetToSlide: 20,
-                                //$SlideWidth: 600,
-                                //$SlideHeight: 300,
-                                $SlideSpacing: 0,
-                                $DisplayPieces: 1,
-                                $ParkingPosition: 0,
-                                $UISearchMode: 1,
-                                $PlayOrientation: 1,
-                                $DragOrientation: 1,
+                        var jssor_slider1 = new $JssorSlider$("slider1_container", options);
 
-                                $CaptionSliderOptions: {
-                                    $Class: $JssorCaptionSlider$,
-                                    $CaptionTransitions: _CaptionTransitions,
-                                    $PlayInMode: 1,
-                                    $PlayOutMode: 3
-                                },
+                        function ScaleSlider() {
+                            var bodyWidth = document.body.clientWidth;
+                            if (bodyWidth)
+                                jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1024));
+                            else
+                                window.setTimeout(ScaleSlider, 30);
+                        }
+                        ScaleSlider();
 
-                                $BulletNavigatorOptions: {
-                                    $Class: $JssorBulletNavigator$,
-                                    $ChanceToShow: 2,
-                                    $AutoCenter: 1,
-                                    $Steps: 1,
-                                    $Lanes: 1,
-                                    $SpacingX: 8,
-                                    $SpacingY: 8,
-                                    $Orientation: 1,
-                                    $Scale: false
-                                },
-
-                                $ArrowNavigatorOptions: {
-                                    $Class: $JssorArrowNavigator$,
-                                    $ChanceToShow: 1,
-                                    $AutoCenter: 2,
-                                    $Steps: 1
+                        $(window).bind("load", ScaleSlider);
+                        $(window).bind("resize", ScaleSlider);
+                        $(window).bind("orientationchange", ScaleSlider);
+                    });
+                </script>
+                <div id="slider1_container" class="hidden" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1024px; height: 250px; overflow: hidden; border-bottom: 10px solid #202121;">
+                    <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1024px; height: 250px; overflow: hidden;">
+                        <script>
+                            for(var i=1;i<=n_img;i++){
+                                if((sl_href[i] != undefined)&&(sl_href[i] != "")&&(sl_href[i] != null)) {
+                                    sl_href[i] = "href='"+sl_href[i]+"'";
                                 }
-                            };
-                            
-                            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
-                            
-                            function ScaleSlider() {
-                                var bodyWidth = document.body.clientWidth;
-                                if (bodyWidth)
-                                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1000));
-                                else
-                                    window.setTimeout(ScaleSlider, 30);
                             }
-                            
-                            ScaleSlider();
-                            $(window).bind("load", ScaleSlider);
-                            $(window).bind("resize", ScaleSlider);
-                            $(window).bind("orientationchange", ScaleSlider);
-                        });
-                    </script>
-                    <div id="slider1_container" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 300px; overflow: hidden;">
-                        <!-- Slides Container -->
-                        <div u="slides" id="slider_images" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 300px; overflow: hidden;">
-                            <div><img u="image" src="img/slider/red.jpg"></div>
-                            <div><img u="image" src="img/slider/purple.jpg"></div>
-                            <div><img u="image" src="img/slider/blue.jpg"></div>
-                            <div><img u="image" src="img/slider/purple.jpg"></div>
-                        </div>
-
-                        <!-- Bullet Navigator Skin Begin -->
-                        <style>
-                            /* jssor slider bullet navigator skin 21 css */
-                            /*
-                            .jssorb21 div           (normal)
-                            .jssorb21 div:hover     (normal mouseover)
-                            .jssorb21 .av           (active)
-                            .jssorb21 .av:hover     (active mouseover)
-                            .jssorb21 .dn           (mousedown)
-                            */
-                            .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av
-                            {
-                                background: url(img/b21.png) no-repeat;
-                                overflow:hidden;
-                                cursor: pointer;
+                            for(var i=1; i<=n_img; i++) {
+                                document.write("<div><a " +sl_href[i]+ "><img u='image' src='img/slider/backgrounds/img_" +i+ "." +img_type+ "'></a></div>");
                             }
-                            .jssorb21 div { background-position: -5px -5px; }
-                            .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
-                            .jssorb21 .av { background-position: -65px -5px; }
-                            .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
-                        </style>
-                        <!-- bullet navigator container -->
-                        <div u="navigator" class="jssorb21" style="margin-left: auto; margin-right: auto; position: absolute; bottom: 26px; left: 6px;">
-                            <!-- bullet navigator item prototype -->
-                            <div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
-                        </div>
-                        <!-- Bullet Navigator Skin End -->
-
-                        <!-- Arrow Navigator Skin Begin -->
-                        <style>
-                            /* jssor slider arrow navigator skin 21 css */
-                            /*
-                            .jssora21l              (normal)
-                            .jssora21r              (normal)
-                            .jssora21l:hover        (normal mouseover)
-                            .jssora21r:hover        (normal mouseover)
-                            .jssora21ldn            (mousedown)
-                            .jssora21rdn            (mousedown)
-                            */
-                            .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn
-                            {
-                                position: absolute;
-                                cursor: pointer;
-                                display: block;
-                                background: url(img/a21.png) center center no-repeat;
-                                overflow: hidden;
-                            }
-                            .jssora21l { background-position: -3px -33px; }
-                            .jssora21r { background-position: -63px -33px; }
-                            .jssora21l:hover { background-position: -123px -33px; }
-                            .jssora21r:hover { background-position: -183px -33px; }
-                            .jssora21ldn { background-position: -243px -33px; }
-                            .jssora21rdn { background-position: -303px -33px; }
-                        </style>
-                        <!-- Arrow Left -->
-                        <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
-                        </span>
-                        <!-- Arrow Right -->
-                        <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
-                        </span>
+                        </script>
                     </div>
-                </div>
-                <div class="content" id="quem-somos">
-                    <p>Conteudo do Quem somos</p>
-                </div>
-                <div class="content" id="solucoes">
-                    <p>Conteudo do Soluções</p>
-                </div>
-                <div class="content" id="parceiros">
-                    <p>Conteudo do Parceiros</p>
-                </div>
-                <div class="content" id="marcas-comerciais">
-                    <p>Conteudo do Marcas Comerciais</p>
-                </div>
-                <div class="content" id="contactos">
-                    <p>Conteudo do contactos</p>
+                    <style>
+                        .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av
+                        {
+                            background: url(img/slider/b21.png) no-repeat;
+                            overflow:hidden;
+                            cursor: pointer;
+                        }
+                        .jssorb21 div { background-position: -5px -5px; }
+                        .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+                        .jssorb21 .av { background-position: -65px -5px; }
+                        .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
+                    </style>
+                    <div u="navigator" class="jssorb21" style="position: absolute; bottom: 15px; left: 6px;">
+                        <div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
+                    </div>
+                    <style>
+                        .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn {
+                            position: absolute;
+                            cursor: pointer;
+                            display: block;
+                            background: url(img/slider/a21.png) center center no-repeat;
+                            overflow: hidden;
+                        }
+                        .jssora21l { background-position: -3px -33px; }
+                        .jssora21r { background-position: -63px -33px; }
+                        .jssora21l:hover { background-position: -123px -33px; }
+                        .jssora21r:hover { background-position: -183px -33px; }
+                        .jssora21ldn { background-position: -243px -33px; }
+                        .jssora21rdn { background-position: -303px -33px; }
+                    </style>
+                    <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 5px;"></span>
+                    <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 5px"></span>
                 </div>
             </div>
+            <script>
+                if (n_img != 0) {
+                    $("#slider1_container").removeClass("hidden");
+                }
+            </script>
+			<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.440243053205!2d-8.43583799999999!3d39.45938200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1863adf1544f95%3A0x4509f346d36a797f!2sHiperc%C3%A1lculo+Ii-tecnologias+De+Informa%C3%A7%C3%A3o+Lda!5e0!3m2!1spt-PT!2spt!4v1423350647448" width="600" height="450" frameborder="0" style="border: 0"></iframe>-->
         </div>
-            
-        
-        <!-- Tive de importar alguns ficheiros que faltavam (i.e. foundation.tab.js, etc.) -->
-                    
-        <div class="row panel radius">
-            2015 - Hipercálculo II<br>
-            Tecnologias de Informação Unipessoal Lda.
+        <div class="footer">
+            <b><p><i class="fa fa-copyright"></i> 2015 - Hipercálculo II - Tecnologias de Informação Unipessoal Lda.</p></b>
         </div>
-        
-    <!-- FIM DE BODY -->
-        <script>
-            document.write('<script src=' +
-            ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
-            '.js><\/script>')
-        </script>
-        <script src="js/foundation.min.js"></script>
-        <script>
-            $(document).foundation();
-        </script>
     </body>
 </html>
