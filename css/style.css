@@ -28,7 +28,7 @@ body {
 }
 
 .logo {
-    background-image: url("../img/logo/logo.svg"), url("../img/logo/logo.png");
+    background-image: url("../img/logo/logo.svg");
     background-repeat: no-repeat;
     background-position: center;
     display: block;
